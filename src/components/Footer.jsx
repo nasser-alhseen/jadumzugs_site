@@ -16,7 +16,7 @@ export default function Footer() {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 600,
+    width: '50%',
     bgcolor: '#d0d8ff',
     boxShadow: 24,
     borderRadius: '25px' ,

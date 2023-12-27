@@ -19,7 +19,7 @@ export default function Footer() {
     width: '80%',
     bgcolor: '#d0d8ff',
     boxShadow: 24,
-    borderRadius: '25px' ,
+    borderRadius: '25px',
 
     p: 4,
   };
@@ -35,7 +35,8 @@ export default function Footer() {
       <ul className="links">
         <li>
           <div>
-            <a href="#hero" onClick={handleOpen}>Privacy Policy</a>
+            <a href="#hero" onClick={handleOpen}>     {t("privacy")}
+            </a>
 
             <Modal
               open={open}
@@ -45,11 +46,11 @@ export default function Footer() {
             >
               <Box sx={style}>
                 <Typography id="modal-modal-title" variant="h6" component="h2">
-                {t("accept")}
+                  {t("accept")}
 
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {t("accept-policy")}
+                  {t("accept-policy")}
                 </Typography>
               </Box>
             </Modal>

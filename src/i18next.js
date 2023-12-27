@@ -1,8 +1,8 @@
 import i18n from "i18next";
 import { useTranslation, initReactI18next } from "react-i18next";
 var ls = require('local-storage');
-var lang=ls.get('lang');
-if(lang===null)lang='du'
+var lang = ls.get('lang');
+if (lang === null) lang = 'du'
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -30,8 +30,10 @@ i18n
           "happe_customers": "Happy Customers ",
           "about_us": "Welcome to JAD Umzugs! We are a small transportation and relocation company that assists individuals in moving to new homes in Germany. Our goal is to provide exceptional and reliable service to our clients, making the moving process easy and comfortable. Depending on your needs, we offer packing and unpacking services, transportation, and arrangement in the new home. By submitting your data through this form. Contact us today for a free consultation and a smooth moving experience to your new home.",
           "copy_rights": "Copyright © 2023 JadUmZug. All rights reserved",
-          "accept-policy":"We do not collect personal information. The data you provide is solely used to deliver our services.",
-          "accept":"Accept"
+          "accept-policy": "We do not collect personal information. The data you provide is solely used to deliver our services.",
+          "accept": "Accept"
+          , "privacy": "Privacy Policy"
+
 
         }
       },
@@ -55,8 +57,10 @@ i18n
           "happe_customers": "زبائن سعداء",
           "about_us": "مرحبًا بك في شركة جاد للنقل ! نحن شركة صغيرة للنقل والترحيل نساعد الأشخاص في الانتقال إلى منازل جديدة في ألمانيا. نهدف إلى تقديم خدمة استثنائية وموثوقة لعملائنا، وجعل عملية الانتقال تجربة سهلة ومريحة. اعتمادًا على احتياجاتك، نوفر خدمات التعبئة والتغليف، والنقل، والترتيب في المنزل الجديد اتصل بنا اليوم للحصول على استشارة مجانية وتجربة فعالة للانتقال إلى منزلك الجديد",
           "copy_rights": "جميع الحقوق محفوظة © 2023 JadUmZug",
-          "accept-policy":" نحن لا نقوم بجمع المعلومات الشخصية. البيانات التي تقدمها تُستخدم فقط لتقديم خدماتنا.",
-          "accept":"قبول"
+          "accept-policy": " نحن لا نقوم بجمع المعلومات الشخصية. البيانات التي تقدمها تُستخدم فقط لتقديم خدماتنا.",
+          "accept": "قبول"
+          , "privacy": "سياسة الخصوصية"
+
 
         }
       },
@@ -79,8 +83,10 @@ i18n
           "happe_customers": "Zufriedene Kunden",
           "copy_rights": "Copyright © 2023 JadUmZug. Alle Rechte vorbehalten.",
           "about_us": "Willkommen bei JAD Umzugs! Wir sind ein kleines Transport- und Umzugsunternehmen, das Einzelpersonen beim Umzug in neue Häuser in Deutschland unterstützt. Unser Ziel ist es, außergewöhnlichen und zuverlässigen Service für unsere Kunden zu bieten und den Umzugsprozess einfach und komfortabel zu gestalten. Je nach Ihren Bedürfnissen bieten wir Verpackungs- und Auspackdienste, Transport und Einrichtung im neuen Zuhause an. Indem Sie Ihre Daten über dieses Formular übermitteln. Kontaktieren Sie uns noch heute für eine kostenlose Beratung und eine reibungslose Umzugserfahrung in Ihr neues Zuhause.",
-          "accept-policy":" Wir sammeln keine personenbezogenen Informationen. Die von Ihnen bereitgestellten Daten werden ausschließlich zur Erbringung unserer Dienstleistungen verwendet."
-        ,  "accept":"akzeptieren"
+          "accept-policy": " Wir sammeln keine personenbezogenen Informationen. Die von Ihnen bereitgestellten Daten werden ausschließlich zur Erbringung unserer Dienstleistungen verwendet."
+          , "accept": "akzeptieren"
+          , "privacy": "Datenschutzrichtlinie"
+
 
         }
       }

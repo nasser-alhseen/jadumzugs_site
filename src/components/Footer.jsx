@@ -2,14 +2,58 @@ import React from "react";
 import styled from "styled-components";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
+
 
 export default function Footer() {
   const { t, i18n } = useTranslation();
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 600,
+    bgcolor: '#d0d8ff',
+    boxShadow: 24,
+    borderRadius: '25px' ,
+
+    p: 4,
+  };
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
 
   return (
     <FooterContainer>
+
       <span>Copyright &copy; 2023 JadUmZug. All rights reserved</span>
       <ul className="links">
+        <li>
+          <div>
+            <a href="#hero" onClick={handleOpen}>Privacy Policy</a>
+
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                {t("accept")}
+
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {t("accept-policy")}
+                </Typography>
+              </Box>
+            </Modal>
+          </div>        </li>
         <li>
           <a href="#hero">{t("home")}</a>
         </li>

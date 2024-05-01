@@ -12,11 +12,11 @@ export default function About() {
         <Section id="aboutus">
             <div className="title">
                 <h2>{t("about")}</h2>
-              <div className="pDiv">
-              <p clas>
-                {t("about_us")}
-                </p>
-              </div>
+                <div className="pDiv">
+                    <p clas>
+                        {t("about_us")}
+                    </p>
+                </div>
             </div>
 
         </Section>
@@ -36,11 +36,12 @@ justify-items:center ;
 .title h2{
     text-align:center;
     font-weight: 400;
-    font-size:2rem;
+    font-size:4rem;
+    color:#2656c7;
     
 }
 .pDiv{
-    background-color:#2656c7 ;
+    background-color: ;
     margin-top:0.5rem;
 
 
@@ -51,12 +52,13 @@ justify-items:center ;
 
 }
 p{
-    color:white;
+    color:black;    font-size:1.5rem;
+
 }
 /* Mobile phones media query */
 @media only screen and (max-width: 767px) {
     .pDiv{
-        background-color:#2656c7 ;
+        background-color:white ;
     
        width:20rem;
         padding:1rem;

@@ -10,12 +10,12 @@ import { useTranslation, withTranslation, Trans } from 'react-i18next';
 var ls = require('local-storage');
 
 const icons = [
-  <LocalShippingOutlinedIcon style={{ fontSize: '3rem', color: 'white' }} />,
-  <Inventory2OutlinedIcon style={{ fontSize: '3rem', color: 'white' }} />,
+  <LocalShippingOutlinedIcon style={{ fontSize: '3rem', color: ' #2656c7' }} />,
+  <Inventory2OutlinedIcon style={{ fontSize: '3rem', color: ' #2656c7' }} />,
 
-  <HandymanOutlinedIcon style={{ fontSize: '3rem', color: 'white' }} />,
+  <HandymanOutlinedIcon style={{ fontSize: '3rem', color: ' #2656c7' }} />,
 
-  <CleaningServicesOutlinedIcon style={{ fontSize: '3rem', color: 'white' }} />,
+  <CleaningServicesOutlinedIcon style={{ fontSize: '3rem', color: ' #2656c7' }} />,
 
 
 ];
@@ -24,15 +24,14 @@ export default function Services() {
 
   const [services, setServices] = useState([]);
 
-  // function to fetch the list of objects from an API
   const fetchServices = async () => {
     try {
       const response = await fetch('https://jad-umzug.onrender.com/services/all', {
-        method: 'POST', // Specify the HTTP method you want to use
+        method: 'POST', 
         headers: {
-          'Content-Type': 'application/json', // Specify the content type of the request body
+          'Content-Type': 'application/json', 
         },
-        body: JSON.stringify({ lang: ls.get('lang') }), // Replace { key: 'value' } with your actual request body
+        body: JSON.stringify({ lang: ls.get('lang') }),
       });
       const data = await response.json();
       setServices(data['data']);
@@ -41,7 +40,6 @@ export default function Services() {
     }
   };
 
-  // call the fetchServices function when the component mounts
   useEffect(() => {
     fetchServices();
   }, []);
@@ -53,13 +51,12 @@ export default function Services() {
 
   </div>
   <Section id="services">
- 
 
     {(services).map((service, index) => {
       return (
         <div className="service" key={index}>
           <div className="icon">
-            {icons[0]}
+            {icons[index]}
           </div>
           <p>{service.content}</p>
         </div>
@@ -73,6 +70,7 @@ export default function Services() {
 }
 
 const Section = styled.section`
+margin-top:4 rem;
 .title h2{
   margin-bottom:30px
 }
@@ -86,18 +84,19 @@ const Section = styled.section`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   p{
-    color:white;
+    color:black;
   }
   gap: 1rem;
   .service {
+    border:2px solid  #2656c7;
     display: flex;
     border-radius:8px;
-margin-left:1rem;
-margin-right:1rem;
+    margin-left:1rem;
+    margin-right:1rem;
     flex-direction: column;
     gap: 1rem;
     padding: 2rem;
-    background-color: #2656c7;
+    background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: 0.3s ease-in-out;
     &:hover {
@@ -106,17 +105,19 @@ margin-right:1rem;
     }
     .icon {
       img {
-        height: 2.4rem;
+        height: 4rem;
       }
     }
   }
   @media screen and (min-width: 280px) and (max-width: 720px) {
-    margin-top:6rem;
+
+    margin-top:8rem;
 
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
   @media screen and (min-width: 720px) and (max-width: 1080px) {
-    margin-top:6rem;
+
+    margin-top:8rem;
 
     grid-template-columns: repeat(2, 1fr);
   }

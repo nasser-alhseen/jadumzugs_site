@@ -21,7 +21,7 @@ const ToTop = styled.div`
   position: fixed;
   cursor: pointer;
   z-index: 10;
-  bottom: 1rem;
+  bottom: 7rem;
   right: 2rem;
   img {
     height: 2.5rem;

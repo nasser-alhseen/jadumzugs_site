@@ -5,7 +5,7 @@ import '../i18next'
 import homeImage from "../assets/mainBackground.jpg";
 import Navbar from "./Navbar2";
 import { TextField } from "@material-ui/core";
-import { DatePicker, TimePicker ,DesktopTimePicker} from "@mui/x-date-pickers";
+import { DatePicker, TimePicker, DesktopTimePicker } from "@mui/x-date-pickers";
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
 import { format } from 'date-fns';
 
@@ -30,10 +30,10 @@ export default function Hero() {
     i18n.changeLanguage(lng);
   };
   function handleSendClick() {
-    const formattedDate=dateFormat(selectedDate, "d, m, yyyy");
-    const formattedTime=dateFormat(selectedTime, "h:MM TT");
+    const formattedDate = dateFormat(selectedDate, "d, m, yyyy");
+    const formattedTime = dateFormat(selectedTime, "h:MM TT");
 
-    const whatsAppMessage=`
+    const whatsAppMessage = `
     ${currenAddress}
     \n
     ${desiredAdress}
@@ -56,10 +56,10 @@ export default function Hero() {
     window.open(link, '_blank');
   }
   function handleSendClickGmail() {
-    const formattedDate=dateFormat(selectedDate, "d, m, yyyy");
-    const formattedTime=dateFormat(selectedTime, "h:MM TT");
+    const formattedDate = dateFormat(selectedDate, "d, m, yyyy");
+    const formattedTime = dateFormat(selectedTime, "h:MM TT");
 
-    const whatsAppMessage=`
+    const whatsAppMessage = `
     ${currenAddress}
     \n
     ${desiredAdress}
@@ -177,6 +177,9 @@ export default function Hero() {
               />
 
 
+
+            </div>
+            <div className="datesDiv">
               <label htmlFor="">{t('choose_data')}
 
               </label>
@@ -187,7 +190,7 @@ export default function Hero() {
                   setSelectedDate(date);
 
                 }}
-                  format="DD-MM-YYYY"
+                format="DD-MM-YYYY"
 
                 sx={{
                   '& .MuiInputBase-root': {
@@ -201,13 +204,13 @@ export default function Hero() {
               <label htmlFor="">{t('choose_time')}
               </label>
               <DesktopTimePicker
-              value={selectedTime}
-              onChange={(time) => {
+                value={selectedTime}
+                onChange={(time) => {
 
-                setSelectedTime(time);
-            
-              }}
-              ampm={false}
+                  setSelectedTime(time);
+
+                }}
+                ampm={false}
                 sx={{
                   '& .MuiInputBase-root': {
                     height: '32px',
@@ -220,13 +223,11 @@ export default function Hero() {
               ></DesktopTimePicker>
             </div>
 
+          </div>
 
-
-
-            <div className="btns">
-              <button className="btn1" onClick={handleSendClick}>Whats App</button>
-              <button className="btn2" onClick={handleSendClickGmail}>Gmail</button>
-            </div>
+          <div className="btns">
+            <button className="btn1" onClick={handleSendClick}>Whats App</button>
+            <button className="btn2" onClick={handleSendClickGmail}>Gmail</button>
           </div>
         </div>
 
@@ -237,7 +238,8 @@ export default function Hero() {
 
 
 const Section = styled.section`
-
+postion:absolute;
+left:0 px;
 .btns{
   margin-top:1rem;
 }
@@ -344,6 +346,12 @@ background-color:white;
         margin-top: 0.5rem;
         font-size: 1.2rem;
       }
+    }
+    .datesDiv{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
     .search {
       background-color: #ffffffce;

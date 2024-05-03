@@ -123,6 +123,10 @@ export default function Hero() {
           <Navbar />
         </div>
         <div className="formContainer">
+          <div className="title2">
+            <h1> </h1>
+
+          </div>
           <div className="title">
             <h1> {t('welcome_message')}</h1>
 
@@ -353,6 +357,9 @@ background-color:white;
       justify-content: center;
       flex-direction: column;
     }
+    .title2{
+      margin-top:1rem;
+    }
     .search {
       background-color: #ffffffce;
       padding: 0.5rem;
@@ -389,6 +396,9 @@ background-color:white;
     }
   }
   @media screen and (min-width: 280px) and (max-width: 980px) {
+    .title2{
+      margin-top:1rem;
+    }
     .background{
       height:10vh;
     }
@@ -404,7 +414,9 @@ background-color:white;
         height:90vh;
       }
     }
-    
+    .title2{
+      margin-top:1rem;
+    }
     .content {
       .title {
         margin-top:7rem;
@@ -444,6 +456,9 @@ background-color:white;
     }
   }
   @media only screen and (max-width: 767px) {
+    .title2{
+      margin-top:1rem;
+    }
     .background {
       img {
         width: 100%;

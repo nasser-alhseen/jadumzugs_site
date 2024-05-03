@@ -24,7 +24,7 @@ const ToTop = styled.div`
   bottom: 7rem;
   right: 2rem;
   img {
-    height: 2.5rem;
+    height: 1.5rem;
   }
   border-radius: 2rem;
   background-color: #2656c7;;

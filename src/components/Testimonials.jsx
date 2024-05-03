@@ -23,7 +23,7 @@ export default function Testimonials() {
         headers: {
           'Content-Type': 'application/json', // Specify the content type of the request body
         },
-        body: JSON.stringify({ lang: ls.get('lang') }), // Replace { key: 'value' } with your actual request body
+        body: JSON.stringify({ lang: ls.get('lang') }), 
       });
       const data = await response.json();
       const selectedData = data['data'];

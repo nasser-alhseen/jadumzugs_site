@@ -10,12 +10,14 @@ export default function Testimonials() {
   const [content, setContent] = useState('');
 
   const { t, i18n } = useTranslation();
-  var ls = require('local-storage');
 
 
 
   // function to fetch the list of objects from an API
   const fetchServices = async () => {
+    var ls = require('local-storage');
+    var lang = ls.get('lang');
+    if (lang === null) lang = 'du'
 
     try {
       const response = await fetch('https://jad-umzug.onrender.com/opinions/all', {
@@ -23,7 +25,7 @@ export default function Testimonials() {
         headers: {
           'Content-Type': 'application/json', // Specify the content type of the request body
         },
-        body: JSON.stringify({ lang: ls.get('lang') }), 
+        body: JSON.stringify({ lang:lang }), 
       });
       const data = await response.json();
       const selectedData = data['data'];

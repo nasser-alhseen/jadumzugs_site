@@ -283,6 +283,9 @@ background-color:white;
 .search > * {
   display: block;
 }
+.navW{
+  margin-bottom:1rem;
+}
 .btn2{
   flex:1;
  margin-left:5px;
@@ -396,6 +399,9 @@ background-color:white;
     }
   }
   @media screen and (min-width: 280px) and (max-width: 980px) {
+    .navW{
+      margin-bottom:1rem;
+    }
     .title2{
       margin-top:1rem;
     }
@@ -456,6 +462,9 @@ background-color:white;
     }
   }
   @media only screen and (max-width: 767px) {
+    .navW{
+      margin-bottom:1rem;
+    }
     .title2{
       margin-top:1rem;
     }

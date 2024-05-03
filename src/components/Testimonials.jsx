@@ -3,11 +3,12 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { TextField } from "@material-ui/core";
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
-
+import rating from '../assets/rate.png'
 export default function Testimonials() {
   const [opinions, setOpinions] = useState([]);
   const [name, setName] = useState('');
   const [content, setContent] = useState('');
+
   const { t, i18n } = useTranslation();
   var ls = require('local-storage');
 
@@ -54,23 +55,25 @@ export default function Testimonials() {
   return (
     <Section id="testimonials">
       <div className="title">
-        <h2>{t("happe_customers")}</h2>
+        <h2 className="mainTitle">{t("happe_customers")}</h2>
       </div>
       <div className="testimonials">
 
         {(opinions).map(opinion =>
           <div className="testimonial">
 
-            <div className="info">
-              {opinion.name}
+            <div className="ratingDiv">
+              <h2 >
+                {opinion.name}
 
+              </h2>
+              <img src={rating} width={40} alt="" />
             </div>
-            <div className="t">
-              hi
-            </div>
+            <p className="t">
+              {opinion.content}
+            </p>
             <div className="details">
 
-              {opinion.content}
 
             </div>
 
@@ -115,6 +118,18 @@ export default function Testimonials() {
 }
 
 const Section = styled.section`
+.ratingDiv{
+  display:flex;
+  flex-direction:row;
+  
+}
+.img{
+  margin-right:1rem;
+}
+.mainTitle{
+  font-size:3rem;
+  color: #2656c7;
+}
 .t{
  color: #2656c7;
 
@@ -122,6 +137,10 @@ const Section = styled.section`
 .btn2{
   flex:1;
  margin-left:5px;
+ margin-top:25px;
+ margin-bottom:25px;
+
+
  padding-left: 2.5rem;
  padding-right: 2.5rem;
  padding-top:1rem;
@@ -170,7 +189,8 @@ const Section = styled.section`
     display:flex;
     flex-direction:column;
     justify-content: space-between;
-    background-color: #2656c7;
+    background-color: white;
+    border:2px solid  #2656c7;
     padding: 2rem;
     margin-left:1rem;
     margin-right:1rem;

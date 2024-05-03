@@ -7,6 +7,10 @@ import HandymanOutlinedIcon from '@mui/icons-material/HandymanOutlined';
 import CleaningServicesOutlinedIcon from '@mui/icons-material/CleaningServicesOutlined';
 import { useState, useEffect } from "react";
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
+import delivery from '../assets/delivery.png';
+import truck from '../assets/delivery-truck.png'
+import movingTruck from '../assets/moving-truck.png'
+import packages from '../assets/packages.png'
 var ls = require('local-storage');
 
 const icons = [
@@ -20,52 +24,97 @@ const icons = [
 
 ];
 export default function Services() {
-  const { t, i18n } = useTranslation();
+  const servicesList = [
+    {
+      icon: packages,
+      title: "Ein- & Auspackservice ",
+      subtitle: `
+      Wir übernehmen das Ein- und
+      Auspacken für Sie. Mit dem
+      richtigen Verpackungsmaterial und
+      professionellem Team können Sie
+      sich auf wichtigere Themen
+      fokussieren.`
+    },
+    {
+      icon: delivery,
+      title: "Transport",
+      subtitle: `
+Mit unseren Transportern, können
+Sie kleine sowie große Möbelstücke
+und Wertsachen transportieren.
+Flexibel, sicher und professionell. `
+    },
+    {
+      icon: truck,
+      title: "Privatumzu",
+      subtitle: `
 
-  const [services, setServices] = useState([]);
+      Egal ob Wohnung oder Haus wir
+      bringen Ihre wertvollen Sachen gut
+      und sicher in Ihr neues zuhause.
+      Mit uns ist Ihr Umzug stressfrei und
+      reibungslos`
+    },
+    {
+      icon: movingTruck,
+      title: "Gewerbeumzu",
+      subtitle: `
+      Wir kümmern uns beim
+      Geschäftsumzug von A-Z. Wir
+      sorgen dafür, dass der Umzug
+      zuverlässig durchläuft und Ihr
+      Betrieb nicht beeinträchtigt wird`
+    },
+  ];
+  // const { t, i18n } = useTranslation();
 
-  const fetchServices = async () => {
-    try {
-      const response = await fetch('https://jad-umzug.onrender.com/services/all', {
-        method: 'POST', 
-        headers: {
-          'Content-Type': 'application/json', 
-        },
-        body: JSON.stringify({ lang: ls.get('lang') }),
-      });
-      const data = await response.json();
-      setServices(data['data']);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const [services, setServices] = useState([]);
 
-  useEffect(() => {
-    fetchServices();
-  }, []);
+  // const fetchServices = async () => {
+  //   try {
+  //     const response = await fetch('https://jad-umzug.onrender.com/services/all', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ lang: ls.get('lang') }),
+  //     });
+  //     const data = await response.json();
+  //     setServices(data['data']);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchServices();
+  // }, []);
 
 
   return (
     <div>
-       <div className="titleDiv">
+      <div className="titleDiv">
 
-  </div>
-  <Section id="services">
+      </div>
+      <Section id="services">
 
-    {(services).map((service, index) => {
-      return (
-        <div className="service" key={index}>
-          <div className="icon">
-            {icons[index]}
-          </div>
-          <p>{service.content}</p>
-        </div>
-      );
-    })}
-  </Section>
+        {(servicesList).map((service, index) => {
+          return (
+            <div className="service" key={index}>
+              <div className="icon">
+                <img src={service.icon} alt="" />
+              </div>
+              <h3>{service.title}</h3>
+
+              <p>{service.subtitle}</p>
+            </div>
+          );
+        })}
+      </Section>
     </div>
 
-  
+
   );
 }
 

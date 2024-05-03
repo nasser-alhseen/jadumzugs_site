@@ -14,7 +14,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker } from '@mui/x-date-pickers';
 import CookieConsent from "react-cookie-consent";
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
-
+import  logoImg  from './assets/mainlogo.png';
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
 
 
@@ -59,7 +59,7 @@ export default function App() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className="maindiv">
-        <CookieConsent
+        {/* <CookieConsent
           location="bottom"
           buttonText={t('accept')}
           cookieName="myAwesomeCookieName2"
@@ -68,9 +68,9 @@ export default function App() {
           expires={150}
         >
           {t('accept-policy')}
-        </CookieConsent>
+        </CookieConsent> */}
         <ScrollToTop />
-        <FloatingWhatsApp accountName="JadUmgZugs" phoneNumber="+963986417169" avatar="http://127.0.0.1:5500/src/mainlogo.png" />
+        <FloatingWhatsApp accountName="JadUmgZugs" phoneNumber="+963986417169" avatar={logoImg} />
         <Hero />
         <Services />
         <About />
